@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package integers;
+
+service MinutesProvider {
+    rpc ListMinutes (ListMinutesRequest) returns (stream Minute) {}
+}
+
+message ListMinutesRequest {}
+
+message Minute {
+    string symbol = 1;
+    string openDate = 2;
+    string openTime = 3;
+    float open = 4;
+    float high = 5;
+    float low = 6;
+    float close = 7;
+    float contracts = 8;
+    float trades = 9;
+}
